@@ -1,0 +1,38 @@
+# 周年相談フォーム Netlify設定
+# このファイルがあるフォルダ（anniversary-form/）を Netlify のサイトのルートにする。
+# リポジトリの一部だけを使う場合は、Netlify の「Base directory」にこのフォルダを指定する。
+
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+# ブラウザからは /.netlify/functions/contact を呼ぶ。
+# Function 内の GAS の URL は環境変数 GAS_WEBAPP_URL で渡す（コードやこのファイルには書かない）。
+
+# publish = "." のため、静的ファイルとして公開されてしまう内部ファイルを 404 にする。
+# （送信先メールアドレスや設計メモ、開発用サーバーのソースを外部に見せないため）
+[[redirects]]
+  from = "/backend/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/DESIGN.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/404.html"
+  status = 404
+  force = true

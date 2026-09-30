@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>周年記念制作のご相談（プロトタイプ）</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="form.css">
+</head>
+<body class="ann-demo">
+
+<!-- デモ用の簡易ヘッダー。フォーム単体をLPへ差し込む場合はこの header を外してよい -->
+<header class="ann-site-head">
+  <div class="ann-site-head__inner"><svg class="ann-site-head__logo" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1624 450.3" role="img" aria-label="Jcor 株式会社ジェイコル"><path d="M1036.5,447c46,0,89.4-18.1,121.9-50.6c32.7-32.5,50.6-75.8,50.6-121.9c0-45.9-17.9-89.3-50.6-121.9 c-32.5-32.5-75.9-50.5-121.9-50.5c-95,0-172.4,77.3-172.4,172.4c0,46.1,17.9,89.4,50.5,121.9C947.2,428.9,990.5,447,1036.5,447 M936.9,274.5c0-26.6,10.3-51.6,29.2-70.5c18.8-18.7,43.9-29.2,70.5-29.2c26.7,0,51.7,10.4,70.6,29.2 c18.8,18.9,29.2,43.9,29.2,70.5c0,55-44.9,99.7-99.8,99.7c-26.5,0-51.6-10.4-70.5-29.2C947.2,326.1,936.9,301.1,936.9,274.5"/><path d="M252.2,0v272.2c0,57.5-46.9,104.6-104.6,104.6c-27.9,0-54.1-10.9-73.9-30.8c-5.3-5.3-10-11.1-14-17.3L0,370.4 c6.4,9.6,13.9,18.7,22.3,27.1c33.5,33.5,77.9,52,125.3,52c47.4,0,91.9-18.4,125.3-52c33.5-33.5,51.9-77.9,51.9-125.3V0H252.2z"/><path d="M1564.2,208.8l59.8-41.6c-6-8.8-13-17.3-20.7-25.1c-31.1-31.1-72.4-48.2-116.4-48.2 c-90.7,0-164.4,73.9-164.4,164.5v192h72.8v-192c0-24.5,9.6-47.5,26.8-64.8c17.4-17.4,40.4-27,64.8-27c24.6,0,47.6,9.6,65,27 C1556.5,198.1,1560.7,203.3,1564.2,208.8"/><path d="M697.4,330.6c-17.9,26.3-48.1,43.6-82.3,43.6c-26.6,0-51.6-10.4-70.5-29.2c-18.9-18.9-29.2-43.9-29.2-70.5 c0-26.6,10.3-51.6,29.2-70.5c18.8-18.7,43.9-29.2,70.5-29.2c26.7,0,51.6,10.5,70.4,29.2c3.4,3.6,6.9,7.3,9.6,11.2l60.1-41 c-5.5-7.7-11.6-14.8-18.4-21.6c-32.5-32.5-75.8-50.5-121.8-50.5c-95.1,0-172.4,77.3-172.4,172.4c0,46.1,17.9,89.3,50.4,121.9 c32.6,32.6,75.9,50.6,122,50.6c46,0,89.3-18.1,121.8-50.6c7.6-7.5,14.3-15.6,20.2-24.3L697.4,330.6z"/></svg></div>
+</header>
+
+<!-- ここから下がLPへ差し込む「フォーム部分」 -->
+<section class="ann-contact" id="contact" aria-labelledby="ann-contact-title">
+
+  <header class="ann-contact__head">
+    <h2 class="ann-contact__title" id="ann-contact-title" tabindex="-1">周年記念制作のご相談</h2>
+    <p class="ann-contact__lead">企画・デザインから撮影・動画まで、周年に必要な制作物をまとめてご相談いただけます。まだ内容が決まっていなくても問題ありません。</p>
+  </header>
+
+  <div class="ann-contact__inner">
+
+    <!-- STEP 1：入力 -->
+    <form class="ann-form" id="ann-form" novalidate>
+
+      <!-- PC・スマホとも1カラム。DOM順＝入力順 -->
+      <div class="ann-form__fields">
+
+        <div class="ann-field">
+          <label class="ann-field__label" for="ann-company">
+            会社名<span class="ann-badge ann-badge--req">必須</span>
+          </label>
+          <input class="ann-input" id="ann-company" name="company" type="text"
+                 autocomplete="organization" enterkeyhint="next" maxlength="100"
+                 placeholder="例：株式会社サンプル" required aria-describedby="ann-company-err">
+          <p class="ann-field__error" id="ann-company-err" hidden></p>
+        </div>
+
+        <div class="ann-field">
+          <label class="ann-field__label" for="ann-name">
+            お名前<span class="ann-badge ann-badge--req">必須</span>
+          </label>
+          <input class="ann-input" id="ann-name" name="name" type="text"
+                 autocomplete="name" enterkeyhint="next" maxlength="100"
+                 placeholder="例：山田 太郎" required aria-describedby="ann-name-err">
+          <p class="ann-field__error" id="ann-name-err" hidden></p>
+        </div>
+
+        <div class="ann-field">
+          <label class="ann-field__label" for="ann-email">
+            メールアドレス<span class="ann-badge ann-badge--req">必須</span>
+          </label>
+          <input class="ann-input" id="ann-email" name="email" type="email"
+                 inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"
+                 enterkeyhint="next" maxlength="254" placeholder="例：taro@example.co.jp" required
+                 aria-describedby="ann-email-err">
+          <p class="ann-field__error" id="ann-email-err" hidden></p>
+        </div>
+
+        <div class="ann-field">
+          <label class="ann-field__label" for="ann-phone">
+            電話番号<span class="ann-badge ann-badge--req">必須</span>
+          </label>
+          <input class="ann-input" id="ann-phone" name="phone" type="tel"
+                 inputmode="tel" autocomplete="tel" enterkeyhint="next" maxlength="20"
+                 placeholder="例：03-1234-5678" required aria-describedby="ann-phone-err">
+          <p class="ann-field__error" id="ann-phone-err" hidden></p>
+        </div>
+
+        <!-- 何を作りたいか：複数選択チェックチップ。「未定」は排他 -->
+        <fieldset class="ann-field ann-group" id="ann-items-group" aria-describedby="ann-items-err">
+          <legend class="ann-field__label">
+            何を作りたいですか？<span class="ann-badge ann-badge--req">必須</span><span class="ann-field__sub">複数選択可</span>
+          </legend>
+          <div class="ann-chips">
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="logo"><span class="ann-chip__text">ロゴ</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="poster-flyer"><span class="ann-chip__text">ポスター・チラシ</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="brochure"><span class="ann-chip__text">会社案内・パンフレット</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="website"><span class="ann-chip__text">Webサイト</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="recruit-site"><span class="ann-chip__text">採用サイト</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="photo"><span class="ann-chip__text">写真撮影</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="video"><span class="ann-chip__text">動画</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="branding"><span class="ann-chip__text">ブランディング</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="other"><span class="ann-chip__text">その他</span></label>
+            <label class="ann-chip"><input class="ann-chip__input" type="checkbox" name="items" value="undecided" data-exclusive><span class="ann-chip__text">未定</span></label>
+          </div>
+          <p class="ann-field__error" id="ann-items-err" hidden></p>
+        </fieldset>
+
+        <div class="ann-field">
+          <label class="ann-field__label" for="ann-message">
+            その他ご相談内容<span class="ann-badge ann-badge--opt">任意</span>
+          </label>
+          <textarea class="ann-input ann-textarea" id="ann-message" name="message" rows="2" maxlength="2000"
+                    placeholder="ご予算や時期、気になっていることなど"></textarea>
+        </div>
+
+      </div>
+
+      <div class="ann-form__actions">
+        <!-- この時点ではAPI送信しない。検証を通れば確認画面へ進む -->
+        <button class="ann-button" type="submit" id="ann-submit">入力内容を確認する</button>
+        <p class="ann-form__note">ご入力の情報はご相談への対応にのみ使用します。<a href="#privacy">プライバシーポリシー</a></p>
+      </div>
+    </form>
+
+    <!-- STEP 2：確認（値は JS が textContent で描画する。ここでは送信しない） -->
+    <section class="ann-confirm" id="ann-confirm" aria-labelledby="ann-confirm-title" hidden>
+      <h3 class="ann-confirm__title" id="ann-confirm-title" tabindex="-1">入力内容のご確認</h3>
+      <p class="ann-confirm__lead">内容をご確認のうえ、よろしければ「この内容で送信する」を押してください。</p>
+
+      <p class="ann-alert" id="ann-alert" role="alert" hidden></p>
+
+      <dl class="ann-confirm__list" id="ann-confirm-list"></dl>
+
+      <!-- form の外に置き、Enterによる暗黙の送信が起きない構造にしている -->
+      <div class="ann-confirm__actions">
+        <button class="ann-button ann-button--ghost" type="button" id="ann-back">修正する</button>
+        <button class="ann-button" type="button" id="ann-send">
+          <span class="ann-button__label">この内容で送信する</span>
+          <span class="ann-button__spinner" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 3：送信完了 -->
+    <div class="ann-done" id="ann-done" hidden>
+      <div class="ann-done__mark" aria-hidden="true">✓</div>
+      <h3 class="ann-done__title" id="ann-done-title" tabindex="-1">ご相談を受け付けました</h3>
+      <div class="ann-done__id">
+        <p class="ann-done__id-label">お問い合わせ番号</p>
+        <p class="ann-done__id-value" id="ann-done-id"></p>
+      </div>
+      <p class="ann-done__text">お問い合わせの際にこの番号をお伝えいただくと、確認がスムーズです。</p>
+      <dl class="ann-done__summary" id="ann-done-summary"></dl>
+    </div>
+
+    <!-- 確認・送信中・完了をスクリーンリーダーへ伝える（非表示の親の外に置く） -->
+    <p class="ann-sr-only" id="ann-status" role="status" aria-live="polite"></p>
+  </div>
+</section>
+<!-- ここまで -->
+
+<script src="form.js"></script>
+</body>
+</html>
